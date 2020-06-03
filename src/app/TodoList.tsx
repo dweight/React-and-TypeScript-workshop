@@ -1,6 +1,6 @@
-import React, { FC, ReactNode } from 'react'
+import React from 'react'
 
-export const TodoList: FC<ReactNode> = ({ children }) => {
+export const TodoList/** Add a generic here */ = ({ children }) => {
   return (
     <ul>
       {children}

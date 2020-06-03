@@ -1,11 +1,6 @@
-import React, { FC } from 'react'
+import React from 'react'
 
-interface TodoListItemProps {
-  todo: Todo
-  toggleComplete: ToggleComplete
-}
-
-export const TodoListItem: FC<TodoListItemProps> = ({ todo, toggleComplete }) => {
+export const TodoListItem/** Add generic here */ = ({ todo, toggleComplete }) => {
   return <li>
     <label style={{ textDecoration: todo.complete ? 'line-through' : 'none' }}>
       <input

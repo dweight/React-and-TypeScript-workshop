@@ -1,13 +1,10 @@
-import React, { FC, ChangeEvent } from 'react'
+import React from 'react'
 
-interface LanguagePickerProps {
-  langs: Lang[]
-  onLanguageChange: HandleLanguageChange
-}
+// We need to declare an interface for props here
 
-export const LanguagePicker: FC<LanguagePickerProps> = ({ langs, onLanguageChange }) => {
+export const LanguagePicker /** Add a generic with props here */ = ({ langs, onLanguageChange }) => {
   return (
-    <select onChange={(event: ChangeEvent<HTMLSelectElement>) => onLanguageChange(event.currentTarget.value)}>
+    <select onChange={(event/** Add generic here */) => onLanguageChange(event.currentTarget.value)}>
       {langs.map((lang) => <option key={lang.lang} value={lang.lang}>{lang.lang}</option>)}
     </select>
   )

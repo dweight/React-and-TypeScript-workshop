@@ -1,19 +1,15 @@
-import React, { FC, useState, ChangeEvent, FormEvent, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { LanguageContext } from './LanguageContext'
 
-interface TodoFormProps {
-  submit: AddTodo
-}
-
-export const TodoForm: FC<TodoFormProps> = ({ submit }) => {
+export const TodoForm /** Add generic with props */ = ({ submit }) => {
   const [newTodo, setNewTodo] = useState('')
   const lang = useContext(LanguageContext)
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event/** Add generic here */) => {
     setNewTodo(event.currentTarget.value);
   }
 
-  const handleSubmit = (event: FormEvent<HTMLButtonElement>) => {
+  const handleSubmit = (event/** Add generic here */) => {
     event.preventDefault()
     submit(newTodo)
     setNewTodo('')
@@ -22,7 +18,7 @@ export const TodoForm: FC<TodoFormProps> = ({ submit }) => {
   return (
     <form>
       <input type="text" value={newTodo} onChange={handleChange} />
-      <button type="submit" onClick={handleSubmit}>{lang!.text}</button>
+      <button type="submit" onClick={handleSubmit}>{lang/** reasure ts that you know what are you doing! */.text}</button>
     </form>
   )
 }
